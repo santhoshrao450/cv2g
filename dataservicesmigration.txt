@@ -1,0 +1,43 @@
+
+--->cvs2 GIT Migration
+
+
+
+1...change the project path to <project path>   (IN CVS2GIT.OPTIONS)
+
+
+2.../was/app/cvs2svn/cvs2svn-2.4.0/cvs2git --fallback-encoding=ascii --options=cvs2git.options
+
+
+3...create a folder under c/Users/pinnins/cvsproject/<project name>
+
+
+4...WINSCP CUT PASTE THOSE BLOB AND DUMP file to that project folder
+
+
+
+5...rt click...>>GITBASH
+
+6...mkdir<PROJECT NAME>
+
+
+7..CD
+  
+
+8..git init
+
+
+9... git fast-import --export-marks=/c/Users/pinnins/CVSProject/LoanPurchaseModel/git-marks/git-marks.dat < /c/Users/pinnins/CVSProject/LoanPurchaseModel/git-blob.dat
+
+
+10 ...git fast-import --import-marks=/c/Users/pinnins/CVSProject/git-marks/git-marks.dat < /c/Users/pinnins/CVSProject/BlobAndDump/git-dump.dat
+
+
+11.git checkout
+
+12..git remote add origin <remote repo URL>
+
+13...git push origin master
+
+
+
